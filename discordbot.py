@@ -110,7 +110,7 @@ async def status():
 
 			# message = await user.send('test')
 			await msg.edit(content=f'**{aktualnaGodzina}**\nBrak zmian cenowych!\nAktualna cena: {cenaKarty[0]} zł\nIlość dostępnych sztuk: {zostaloSztuk[0]}')
-		await sleep(240)
+		await sleep(300)
 
 @client.event
 async def on_ready():
