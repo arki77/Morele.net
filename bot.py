@@ -27,7 +27,7 @@ client = commands.Bot(command_prefix=('d!', 'D!'), intents=intents)
 client.remove_command('help')
 
 def read_token():
-	with open(r"Mission RTX 3060\token.txt", "r") as f:
+	with open("Mission RTX 3060/token.txt", "r") as f:
 		lines = f.readlines()
 		return lines[0].strip()
 
@@ -36,7 +36,7 @@ token = read_token()
 import requests, re, datetime
 from bs4 import BeautifulSoup
 
-dataBase = r"Mission RTX 3060\data\database.json"
+dataBase = r"D:\Junior Python Developer - GitHub\Mission RTX 3060\data\database.json"
 
 def readBase():
 	with open(dataBase) as f:
