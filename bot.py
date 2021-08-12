@@ -18,12 +18,12 @@ import requests, re, datetime
 from bs4 import BeautifulSoup
 
 
-def read_token():
-	with open(r"D:\Junior Python Developer - GitHub\Mission RTX 3060\data\token.txt", "r") as f:
-		lines = f.readlines()
-		return lines[0].strip()
+# def read_token():
+# 	with open(r"D:\Junior Python Developer - GitHub\Mission RTX 3060\data\token.txt", "r") as f:
+# 		lines = f.readlines()
+# 		return lines[0].strip()
 
-token = read_token()
+# token = read_token()
 
 def readBase():
 	with open(dataBase) as f:
@@ -36,7 +36,6 @@ def updateBase(bazaDanych):
 intents = discord.Intents.default()
 intents.members = True
 
-cowboy_color = 0xDF1313
 
 client = commands.Bot(command_prefix=('d!', 'D!'), intents=intents)
 client.remove_command('help')
