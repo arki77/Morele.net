@@ -18,12 +18,12 @@ import requests, re, datetime
 from bs4 import BeautifulSoup
 
 
-# def read_token():
-# 	with open(r"D:\Junior Python Developer - GitHub\Mission RTX 3060\data\token.txt", "r") as f:
-# 		lines = f.readlines()
-# 		return lines[0].strip()
+def read_token():
+	with open(r"Mission RTX 3060\data\token.txt", "r") as f:
+		lines = f.readlines()
+		return lines[0].strip()
 
-# token = read_token()
+token = read_token()
 
 def readBase():
 	with open(dataBase) as f:
@@ -43,7 +43,7 @@ client.remove_command('help')
 
 
 
-dataBase = r"D:\Junior Python Developer - GitHub\Mission RTX 3060\data\database.json"
+dataBase = r"Mission RTX 3060\data\database.json"
 
 
 
@@ -117,4 +117,4 @@ async def on_ready():
 	print(f'{client.user} has Awoken!')
 	await client.loop.create_task(status())
 
-client.run('Nzg1MTM1NzE2NzY1MTM4OTQ0.X8zcnQ.ZuKRU7U-TgkbqBZmf5kCyufO6VE')
+client.run(token)
