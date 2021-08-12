@@ -1,1 +1,1 @@
-worker: python bot.py
+discordbot: python discordbot.py
