@@ -74,7 +74,10 @@ async def status():
 		zostaloSztuk = re.findall(r'\b\d+\b', str(zostaloSztuk))
 
 
-		now = datetime.datetime.now()
+
+		now = datetime.datetime.now() + datetime.timedelta(hours=2)
+
+
 		aktualnaGodzina = (now.strftime("%Y-%m-%d, %H:%M:%S"))
 		
 		# user = ctx.get_member(275212680346730498)
