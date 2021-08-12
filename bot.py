@@ -118,4 +118,4 @@ async def on_ready():
 	print(f'{client.user} has Awoken!')
 	await client.loop.create_task(status())
 
-client.run(token)
+client.run('Nzg1MTM1NzE2NzY1MTM4OTQ0.X8zcnQ.ZuKRU7U-TgkbqBZmf5kCyufO6VE')
