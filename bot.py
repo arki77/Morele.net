@@ -19,7 +19,7 @@ from bs4 import BeautifulSoup
 
 
 def read_token():
-	with open(r"Mission RTX 3060\data\token.txt", "r") as f:
+	with open(r"data\token.txt", "r") as f:
 		lines = f.readlines()
 		return lines[0].strip()
 
@@ -43,7 +43,7 @@ client.remove_command('help')
 
 
 
-dataBase = r"Mission RTX 3060\data\database.json"
+dataBase = r"data\database.json"
 
 
 
