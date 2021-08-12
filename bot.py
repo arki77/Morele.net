@@ -14,9 +14,24 @@ from discord.utils import get
 import datetime, time
 import pickle
 import json
+import requests, re, datetime
+from bs4 import BeautifulSoup
 
 
-	
+def read_token():
+	with open(r"D:\Junior Python Developer - GitHub\Mission RTX 3060\data\token.txt", "r") as f:
+		lines = f.readlines()
+		return lines[0].strip()
+
+token = read_token()
+
+def readBase():
+	with open(dataBase) as f:
+		bazaDanych = json.load(f)
+	return bazaDanych
+def updateBase(bazaDanych):
+	with open(dataBase, 'w') as json_file:
+		json.dump(bazaDanych, json_file)
 	
 intents = discord.Intents.default()
 intents.members = True
@@ -26,25 +41,12 @@ cowboy_color = 0xDF1313
 client = commands.Bot(command_prefix=('d!', 'D!'), intents=intents)
 client.remove_command('help')
 
-def read_token():
-	with open(r"D:\Junior Python Developer - GitHub\Mission RTX 3060\data\token.txt", "r") as f:
-		lines = f.readlines()
-		return lines[0].strip()
 
-token = read_token()
 
-import requests, re, datetime
-from bs4 import BeautifulSoup
 
 dataBase = r"D:\Junior Python Developer - GitHub\Mission RTX 3060\data\database.json"
 
-def readBase():
-	with open(dataBase) as f:
-		bazaDanych = json.load(f)
-	return bazaDanych
-def updateBase(bazaDanych):
-	with open(dataBase, 'w') as json_file:
-		json.dump(bazaDanych, json_file)
+
 
 
 
