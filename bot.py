@@ -19,7 +19,7 @@ from bs4 import BeautifulSoup
 
 
 def read_token():
-	with open("token.txt", "r") as f:
+	with open("Mission RTX 3060/token.txt", "r") as f:
 		lines = f.readlines()
 		return lines[0].strip()
 
