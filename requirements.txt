@@ -1,4 +1,4 @@
 discord.py[voice]>=1.4.1
 dblpy
 requests
-BeautifulSoup
+beautifulsoup4
