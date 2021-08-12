@@ -19,7 +19,7 @@ from bs4 import BeautifulSoup
 
 
 def read_token():
-	with open("/token.txt", "r") as f:
+	with open("token.txt", "r") as f:
 		lines = f.readlines()
 		return lines[0].strip()
 
@@ -43,7 +43,7 @@ client.remove_command('help')
 
 
 
-dataBase = "data\database.json"
+dataBase = "data/database.json"
 
 
 
