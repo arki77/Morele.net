@@ -133,8 +133,8 @@ async def status_cmd(ctx):
 
 @client.command(name='usun')
 async def status_cmd(ctx, message_ID):
+	await ctx.message.delete()
 	msg = await ctx.fetch_message(message_ID)
-	await client.delete(ctx.message)
 	await msg.delete()
 
 client.run(token)
