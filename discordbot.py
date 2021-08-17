@@ -37,7 +37,7 @@ intents = discord.Intents.default()
 intents.members = True
 
 
-client = commands.Bot(command_prefix=('d!', 'D!'), intents=intents)
+client = commands.Bot(command_prefix=(''), intents=intents)
 client.remove_command('help')
 
 
@@ -58,9 +58,9 @@ async def status():
 		# await sleep(2)
 		# total_members = sum(1 for _ in client.get_all_members())
 		
-
-		URL = "https://www.morele.net/karta-graficzna-msi-geforce-rtx-3060-gaming-x-12gb-gddr6-rtx-3060-gaming-x-12g-5946238/"
-		page = requests.get(URL)
+		URL_GTX1660 = "https://www.morele.net/karta-graficzna-msi-geforce-gtx-1660-super-gaming-x-6gb-gddr6-gtx-1660-super-gaming-x-6317626/"
+		URL_RTX3060 = "https://www.morele.net/karta-graficzna-msi-geforce-rtx-3060-gaming-x-12gb-gddr6-rtx-3060-gaming-x-12g-5946238/"
+		page = requests.get(URL_GTX1660)
 		soup = BeautifulSoup(page.content, 'html.parser')
 
 		results = soup.find('div', class_='product-row card-mobile card-tablet')
@@ -113,11 +113,27 @@ async def status():
 
 			# message = await user.send('test')
 			await msg.edit(content=f'**{aktualnaGodzina}**\nBrak zmian cenowych!\nAktualna cena: {cenaKarty[0]} zł\nIlość dostępnych sztuk: {zostaloSztuk[0]}')
-		await sleep(150)
+		await sleep(300)
 
 @client.event
 async def on_ready():
 	print(f'{client.user} has Awoken!')
 	await client.loop.create_task(status())
+
+
+
+@client.command(name='status')
+async def status_cmd(ctx):
+	user = await client.fetch_user(275212680346730498)
+	msg = await user.fetch_message(875334419727147010)
+	bazaDanych = readBase()
+
+	# message = await user.send('test')
+	await msg.edit(content=f'**{aktualnaGodzina}**\nBrak zmian cenowych!\nAktualna cena: {cenaKarty[0]} zł\nIlość dostępnych sztuk: {zostaloSztuk[0]}')
+
+@client.command(name='usun')
+async def status_cmd(ctx, message_ID):
+	msg = await ctx.fetch_message(message_ID)
+	await msg.delete()
 
 client.run(token)
