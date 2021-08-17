@@ -17,9 +17,17 @@ import json
 import requests, re, datetime
 from bs4 import BeautifulSoup
 
+#LINUX
+dataBase = "data/database.json"
+token = "token.txt"
+
+
+# #DEVELOPER
+# dataBase = r"Mission RTX 3060\data\database.json"
+# token = r"Mission RTX 3060\token.txt"
 
 def read_token():
-	with open("token.txt", "r") as f:
+	with open(token, "r") as f:
 		lines = f.readlines()
 		return lines[0].strip()
 
@@ -43,7 +51,7 @@ client.remove_command('help')
 
 
 
-dataBase = "data/database.json"
+
 
 
 
@@ -60,7 +68,7 @@ async def status():
 		
 		URL_GTX1660 = "https://www.morele.net/karta-graficzna-msi-geforce-gtx-1660-super-gaming-x-6gb-gddr6-gtx-1660-super-gaming-x-6317626/"
 		URL_RTX3060 = "https://www.morele.net/karta-graficzna-msi-geforce-rtx-3060-gaming-x-12gb-gddr6-rtx-3060-gaming-x-12g-5946238/"
-		page = requests.get(URL_GTX1660)
+		page = requests.get(URL_RTX3060)
 		soup = BeautifulSoup(page.content, 'html.parser')
 
 		results = soup.find('div', class_='product-row card-mobile card-tablet')
@@ -133,7 +141,6 @@ async def status_cmd(ctx):
 
 @client.command(name='usun')
 async def status_cmd(ctx, message_ID):
-	await ctx.message.delete()
 	msg = await ctx.fetch_message(message_ID)
 	await msg.delete()
 
