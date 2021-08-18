@@ -17,7 +17,7 @@ import json
 import requests, re, datetime
 from bs4 import BeautifulSoup
 
-dataBase = "data/newbase.json"
+dataBase = "data/newbase..json"
 token = "token.txt"
 
 # #DEVELOPER
