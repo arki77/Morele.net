@@ -57,7 +57,12 @@ def updateBazaDanych(bazaDanych, link, cena, ilosc, itemname):
 	bazaDanych.update(newItem)
 	updateBase(bazaDanych)
 
-
+@client.command()
+async def update(ctx):
+	if ctx.author.id == 275212680346730498:
+		member = ctx.author
+		await member.send(f'**Update database!** - https://dashboard.heroku.com/apps/bot-cowboy/resources')
+		await member.send(file=discord.File(dataBase))	
 
 @client.event
 async def status():

@@ -3,11 +3,11 @@ git init
 
 mission-rtx3060
 
-heroku git:remote -a varczi0
+heroku git:remote -a mission-rtx3060
 git add .
 git commit -am "Update"
 git push heroku master
-heroku logs -a bot-cowboy
+heroku logs -a mission-rtx3060
 
 heroku git:clone -a bot-cowboy
 
