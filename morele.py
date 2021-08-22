@@ -97,7 +97,7 @@ async def status():
 					
 					cena, ilosc = itemScan(key)
 					embed.add_field(name=f'❌ Było:', value=f'**{bazaDanych[key]["Cena"]} zł**\n**{formatIlosc(bazaDanych[key]["Ilosc"])}**', inline=True)
-					embed.add_field(name=f'✅ Jest:', value=f'**{cena} zł** ({cena-bazaDanych[key]["Cena"]} zł)\n**{formatIlosc(ilosc)}** ({ilosc-bazaDanych[key]["Ilosc"]})', inline=True)
+					embed.add_field(name=f'✅ Jest:', value=f'**{cena} zł** ({cena-bazaDanych[key]["Cena"]} zł)\n**{formatIlosc(ilosc)}** ({ilosc-bazaDanych[key]["Ilosc"]:+d})', inline=True)
 
 					embed.timestamp = datetime.datetime.utcnow()
 					embed.set_thumbnail(url='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Morele.net_logo_2021.svg/2560px-Morele.net_logo_2021.svg.png')
@@ -117,7 +117,7 @@ async def status():
 					
 					cena, ilosc = itemScan(key)
 					embed.add_field(name=f'❌ Było:', value=f'**{bazaDanych[key]["Cena"]} zł**', inline=True)
-					embed.add_field(name=f'✅ Jest:', value=f'**{cena} zł** ({cena-bazaDanych[key]["Cena"]} zł)', inline=True)
+					embed.add_field(name=f'✅ Jest:', value=f'**{cena} zł** ({cena-bazaDanych[key]["Cena"]:+d} zł)', inline=True)
 
 					embed.timestamp = datetime.datetime.utcnow()
 					embed.set_thumbnail(url='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Morele.net_logo_2021.svg/2560px-Morele.net_logo_2021.svg.png')
@@ -132,7 +132,7 @@ async def status():
 					
 					cena, ilosc = itemScan(key)
 					embed.add_field(name=f'❌ Było:', value=f'**{formatIlosc(bazaDanych[key]["Ilosc"])}**', inline=True)
-					embed.add_field(name=f'✅ Jest:', value=f'**{formatIlosc(ilosc)}** ({ilosc-bazaDanych[key]["Ilosc"]})', inline=True)
+					embed.add_field(name=f'✅ Jest:', value=f'**{formatIlosc(ilosc)}** ({ilosc-bazaDanych[key]["Ilosc"]:+d})', inline=True)
 
 					embed.timestamp = datetime.datetime.utcnow()
 					embed.set_thumbnail(url='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Morele.net_logo_2021.svg/2560px-Morele.net_logo_2021.svg.png')

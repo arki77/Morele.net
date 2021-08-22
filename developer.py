@@ -91,13 +91,18 @@ def ItemScan(link):
 # 	print(key)
 
 
-ilosc = 10
+# ilosc = 10
 
-if ilosc >= 10:
-	print(f"Dostępnych {ilosc} szt.")
-elif ilosc <= 9 and ilosc > 4:
-	print(f"Zostało {ilosc} szt.")
-elif ilosc <= 4:
-	print(f'Zostały {ilosc} szt.')
-elif ilosc == 1:
-	print(f'Została {ilosc} szt.')
+# if ilosc >= 10:
+# 	print(f"Dostępnych {ilosc} szt.")
+# elif ilosc <= 9 and ilosc > 4:
+# 	print(f"Zostało {ilosc} szt.")
+# elif ilosc <= 4:
+# 	print(f'Zostały {ilosc} szt.')
+# elif ilosc == 1:
+# 	print(f'Została {ilosc} szt.')
+
+score = -10
+
+
+print(f'{score:+d}')
