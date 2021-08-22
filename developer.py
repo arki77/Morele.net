@@ -102,7 +102,19 @@ def ItemScan(link):
 # elif ilosc == 1:
 # 	print(f'Została {ilosc} szt.')
 
-score = -10
+
+bylo = 5000
+jest = 64000
+
+wynik = jest-bylo
 
 
-print(f'{score:+d}')
+def color(bylo, jest):
+	wynik = jest-bylo
+	if wynik <= 0:
+		return 0x7ffc03
+	else:
+		return 0xff503c
+print(f'{wynik:+d}')
+
+color(bylo, jest)

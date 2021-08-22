@@ -63,6 +63,13 @@ async def update(ctx):
 		member = ctx.author
 		await member.send('**Update database!**',file=discord.File(dataBase))	
 
+def color(bylo, jest):
+	wynik = jest-bylo
+	if wynik <= 0:
+		return 0x7ffc03
+	else:
+		return 0xff503c
+
 @client.event
 async def status():
 	while True:
@@ -112,7 +119,7 @@ async def status():
 					
 					embed = discord.Embed(
 						title=f'**{bazaDanych[key]["Nazwa"]}**',
-						color=0xff503c
+						color=color(int(bazaDanych[key]["Cena"]), cena)
 						)
 					
 					cena, ilosc = itemScan(key)
