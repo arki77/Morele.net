@@ -99,7 +99,7 @@ async def status():
 					
 					embed = discord.Embed(
 						title=f'**{bazaDanych[key]["Nazwa"]}**',
-						color=0xff503c
+						color=color(int(bazaDanych[key]["Cena"]), cena)
 						)
 					
 					cena, ilosc = itemScan(key)
