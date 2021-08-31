@@ -87,7 +87,7 @@ async def status():
 					embed = discord.Embed(
 						title=f'**{bazaDanych[key]["Nazwa"]}**',
 						description=f'Ponownie dostepne do kupienia!\n**Cena: {cena} zł**\n**{formatIlosc(ilosc)}**',
-						color=0xff503c
+						color=0x7ffc03
 						)
 					embed.set_thumbnail(url='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Morele.net_logo_2021.svg/2560px-Morele.net_logo_2021.svg.png')
 					await user.send(embed=embed)
@@ -134,7 +134,7 @@ async def status():
 				elif ilosc != bazaDanych[key]["Ilosc"]:
 					embed = discord.Embed(
 						title=f'**{bazaDanych[key]["Nazwa"]}**',
-						color=0xff503c
+						color=color(ilosc, int(bazaDanych[key]["Ilosc"]))
 						)
 					
 					cena, ilosc = itemScan(key)

@@ -115,6 +115,3 @@ def color(bylo, jest):
 		return 0x7ffc03
 	else:
 		return 0xff503c
-print(f'{wynik:+d}')
-
-color(bylo, jest)
