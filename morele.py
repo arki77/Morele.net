@@ -20,9 +20,6 @@ from bs4 import BeautifulSoup
 dataBase = "data/newbase..json"
 token = "token.txt"
 
-# #DEVELOPER
-# dataBase = r"Morele.net (Powiadomienia)\data\newbase..json"
-# token = r"Morele.net (Powiadomienia)\token.txt"
 
 def read_token():
 	with open(token, "r") as f:
@@ -45,10 +42,6 @@ intents.members = True
 
 client = commands.Bot(command_prefix=('!'), intents=intents)
 client.remove_command('help')
-
-
-
-
 
 
 def updateBazaDanych(bazaDanych, link, cena, ilosc, itemname):
@@ -149,68 +142,9 @@ async def status():
 
 
 
-				
+	
 		await sleep(60)
 
-
-
-		# URL_GTX1660 = "https://www.morele.net/karta-graficzna-msi-geforce-gtx-1660-super-gaming-x-6gb-gddr6-gtx-1660-super-gaming-x-6317626/"
-		# URL_RTX3060 = "https://www.morele.net/karta-graficzna-msi-geforce-rtx-3060-gaming-x-12gb-gddr6-rtx-3060-gaming-x-12g-5946238/"
-		# page = requests.get(URL_RTX3060)
-		# soup = BeautifulSoup(page.content, 'html.parser')
-
-		# results = soup.find('div', class_='product-row card-mobile card-tablet')
-
-		# #Cena karty graficznej
-		# cenaKarty = results.find('div',  id='product_price_brutto')
-		# cenaKarty = re.findall(r'\b\d+\b', list(str(cenaKarty).split(" "))[2])
-
-		# #Aktualna ilosc karty graficznej
-		# zostaloSztuk = results.find('div', class_='prod-available-items')
-		# zostaloSztuk = re.findall(r'\b\d+\b', str(zostaloSztuk))
-
-
-
-		# now = datetime.datetime.now() + datetime.timedelta(hours=2)
-
-
-		# aktualnaGodzina = (now.strftime("%Y-%m-%d, %H:%M:%S"))
-		
-		# # user = ctx.get_member(275212680346730498)
-
-		# bazaDanych = readBase()
-		# if bazaDanych['ilosc sztuk'] != int(zostaloSztuk[0]) or bazaDanych['cena karty'] != int(cenaKarty[0]):
-		# 	user = await client.fetch_user(275212680346730498)
-		# 	if bazaDanych['ilosc sztuk'] != int(zostaloSztuk[0]) and bazaDanych['cena karty'] != int(cenaKarty[0]):
-		# 		# print(f'Cena karty uległa zmianie! Nowa cena karty to {cenaKarty[0]} zł')
-		# 		# print(f'Iłość sztuk uległa zmianie! Aktualnie ilość sztuk wynosi {zostaloSztuk[0]}')
-		# 		bazaDanych['cena karty'] = int(cenaKarty[0])
-		# 		bazaDanych['ilosc sztuk'] = int(zostaloSztuk[0])
-		# 		updateBase(bazaDanych)
-		# 		await user.send(f'**{aktualnaGodzina}**\nCena karty uległa zmianie! Nowa cena karty to {cenaKarty[0]} zł\nIłość sztuk uległa zmianie! Aktualnie ilość sztuk wynosi {zostaloSztuk[0]}') 
-		# 		bazaDanych['cena karty'] = int(cenaKarty[0])
-		# 		bazaDanych['ilosc sztuk'] = int(zostaloSztuk[0])
-
-		# 	elif bazaDanych['ilosc sztuk'] != int(zostaloSztuk[0]):
-		# 		# print(f'Iłość sztuk uległa zmianie! Aktualnie ilość sztuk wynosi {zostaloSztuk[0]}')
-		# 		await user.send(f'**{aktualnaGodzina}**\nIłość sztuk uległa zmianie! Aktualnie ilość sztuk wynosi {zostaloSztuk[0]}') 
-		# 		bazaDanych['ilosc sztuk'] = int(zostaloSztuk[0])
-		# 		updateBase(bazaDanych)
-		# 	elif bazaDanych['cena karty'] != int(cenaKarty[0]):
-		# 		# print(f'Cena karty uległa zmianie! Nowa cena karty to {cenaKarty[0]} zł')
-		# 		await user.send(f'**{aktualnaGodzina}**\nCena karty uległa zmianie! Nowa cena karty to {cenaKarty[0]} zł') 
-		# 		bazaDanych['cena karty'] = int(cenaKarty[0])
-		# 		updateBase(bazaDanych)
-		# else:
-
-		# 	user = await client.fetch_user(275212680346730498)
-		# 	msg = await user.fetch_message(875334419727147010)
-		# 	# await msg.delete()
-
-		# 	# message = await user.send('test')
-		# 	await msg.edit(content=f'**{aktualnaGodzina}**\nBrak zmian cenowych!\nAktualna cena: {cenaKarty[0]} zł\nIlość dostępnych sztuk: {zostaloSztuk[0]}')
-		# await sleep(300)
-		
 
 @client.event
 async def on_ready():
@@ -327,17 +261,10 @@ async def lista_cmd(ctx):
 		color=0xff503c
 		)
 	x = 0
-	# for key in bazaDanych:
-	# 	x += 1
-	# 	if bazaDanych[key]["Niedostepny"] == "Tak":
-	# 		embed.add_field(name=f'**[{x}] **', value=f'{bazaDanych[key]["Nazwa"]}', inline=False)
-	# 	else:
-	# 		embed.add_field(name=f'**{bazaDanych[key]["Nazwa"]}**', value=f'Niedostepny', inline=False)
 	for key in bazaDanych:
 		x += 1
 		embed.add_field(name=f'**[ {x} ] **', value=f'{bazaDanych[key]["Nazwa"]}', inline=False)
 
-	# embed.timestamp = datetime.datetime.utcnow()
 	embed.set_thumbnail(url='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Morele.net_logo_2021.svg/2560px-Morele.net_logo_2021.svg.png')
 	await ctx.send(embed=embed)
 
